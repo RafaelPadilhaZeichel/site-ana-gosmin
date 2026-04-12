@@ -10,12 +10,22 @@ export default function Header() {
 
   const closeMenu = () => setIsMobileMenuOpen(false);
 
-  // Efeito para travar a rolagem da página quando o menu mobile estiver aberto
+  // Trava a rolagem e oculta o WhatsApp quando o menu abre
   useEffect(() => {
+    const waButton = document.getElementById('wa-button');
+    
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+      if (waButton) {
+        waButton.style.opacity = '0';
+        waButton.style.pointerEvents = 'none';
+      }
     } else {
       document.body.style.overflow = 'unset';
+      if (waButton) {
+        waButton.style.opacity = '1';
+        waButton.style.pointerEvents = 'auto';
+      }
     }
     return () => { document.body.style.overflow = 'unset'; }
   }, [isMobileMenuOpen]);
@@ -56,7 +66,7 @@ export default function Header() {
           </a>
         </div>
 
-        {/* Botão Hamburguer (Mobile) - Fica invisível quando o menu abre */}
+        {/* Botão Hamburguer (Mobile) */}
         {!isMobileMenuOpen && (
           <button 
             className="md:hidden text-brand-darkgreen p-2"
@@ -68,21 +78,20 @@ export default function Header() {
         )}
       </div>
 
-      {/* Overlay Escuro para o Mobile (Fundo que escurece o site) */}
+      {/* Overlay Escuro para o Mobile */}
       {isMobileMenuOpen && (
         <div 
-          className="md:hidden fixed inset-0 bg-brand-darkgreen/60 backdrop-blur-sm z-50 h-screen w-screen" 
+          className="md:hidden fixed inset-0 bg-brand-darkgreen/60 backdrop-blur-sm z-50 h-[100dvh] w-screen" 
           onClick={closeMenu}
         ></div>
       )}
 
-      {/* Menu Dropdown Deslizante (Mobile) */}
+      {/* Menu Dropdown Deslizante (Mobile) - Usando 100dvh para não cortar */}
       <div 
-        className={`md:hidden fixed top-0 right-0 h-screen w-[85%] max-w-sm bg-brand-bg shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
+        className={`md:hidden fixed top-0 right-0 h-[100dvh] w-[85%] max-w-sm bg-brand-bg shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Botão Fechar "X" agora fica DENTRO do menu, no canto direito */}
         <button 
           className="absolute top-6 right-6 text-brand-darkgreen p-2"
           onClick={closeMenu}
@@ -91,8 +100,8 @@ export default function Header() {
           <X className="w-8 h-8" />
         </button>
 
-        {/* Conteúdo do Menu */}
-        <div className="flex flex-col h-full pt-24 px-8 pb-10 overflow-y-auto">
+        {/* Conteúdo do Menu com espaçamento extra no final (pb-12) */}
+        <div className="flex flex-col h-full pt-24 px-8 pb-12 overflow-y-auto">
           <nav className="flex flex-col gap-2 text-brand-darkgreen font-medium text-xl mt-4">
             <Link href="#sobre" onClick={closeMenu} className="hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">Sobre</Link>
             <Link href="#especialidades" onClick={closeMenu} className="hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">Especialidades</Link>

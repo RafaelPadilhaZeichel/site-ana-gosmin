@@ -8,7 +8,6 @@ export default function FloatingWhatsApp() {
   const [showTooltip, setShowTooltip] = useState(false);
   const [hasClosed, setHasClosed] = useState(false);
 
-  // Efeito para mostrar a mensagem após 4 segundos
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!hasClosed) {
@@ -19,23 +18,21 @@ export default function FloatingWhatsApp() {
     return () => clearTimeout(timer);
   }, [hasClosed]);
 
-  // Função para o usuário fechar o balão sem clicar no link do WhatsApp
   const handleClose = (e: React.MouseEvent) => {
     e.preventDefault();
     setShowTooltip(false);
-    setHasClosed(true); // Garante que não vai abrir de novo na mesma sessão
+    setHasClosed(true); 
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div id="wa-button" className="fixed bottom-6 right-6 z-50 flex flex-col items-end transition-opacity duration-300">
       
-      {/* Balão de Mensagem (Tooltip) */}
+      {/* Balão de Mensagem */}
       <div 
         className={`mb-4 w-64 bg-white rounded-2xl shadow-2xl border border-brand-lightgreen/20 p-4 relative origin-bottom-right transition-all duration-500 ease-out flex gap-3 ${
           showTooltip ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-50 translate-y-4 pointer-events-none'
         }`}
       >
-        {/* Botão de fechar o balão */}
         <button 
           onClick={handleClose}
           className="absolute top-2 right-2 text-brand-mediumgreen hover:text-brand-darkgreen bg-brand-bg rounded-full p-0.5 transition-colors"
@@ -44,7 +41,6 @@ export default function FloatingWhatsApp() {
           <X className="w-4 h-4" />
         </button>
 
-        {/* Avatar da Nutricionista */}
         <div className="relative w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-brand-lightgreen">
           <Image 
             src="/images/Foto5.jpeg" 
@@ -54,7 +50,6 @@ export default function FloatingWhatsApp() {
           />
         </div>
 
-        {/* Textos */}
         <div className="pt-1 pr-4">
           <p className="text-sm text-brand-darkgreen leading-tight font-heading font-bold mb-1">
             Ana Gosmin
@@ -64,7 +59,6 @@ export default function FloatingWhatsApp() {
           </p>
         </div>
 
-        {/* Triângulo apontando para baixo (Efeito de balão de fala) */}
         <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-b border-r border-brand-lightgreen/20 transform rotate-45"></div>
       </div>
 
