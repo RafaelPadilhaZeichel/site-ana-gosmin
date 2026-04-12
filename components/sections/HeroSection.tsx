@@ -33,15 +33,12 @@ export default function HeroSection() {
           </a>
         </FadeIn>
 
-        {/* Lado da Imagem: Efeito de Moldura Dupla para proteger a foto */}
         <FadeIn className="flex-1 relative w-full max-w-md lg:max-w-lg aspect-[4/5]">
-          {/* Sombra/Shape traseiro */}
           <div className="absolute inset-0 bg-brand-lightgreen/30 rounded-[40px] transform rotate-3 scale-105 transition-transform duration-500 hover:rotate-6 -z-10"></div>
           
-          {/* Moldura externa com padding (p-4) */}
-          <div className="relative w-full h-full rounded-[40px] overflow-hidden shadow-2xl border-4 border-white/50 bg-white/40 p-4 backdrop-blur-sm">
-            {/* Container interno da Imagem */}
-            <div className="relative w-full h-full rounded-3xl overflow-hidden">
+          {/* Adicionado pt-10 e p-6 para empurrar a imagem para baixo e diminuir seu tamanho na moldura */}
+          <div className="relative w-full h-full rounded-[40px] overflow-hidden shadow-2xl border-4 border-white/50 bg-white/40 p-6 pt-10 backdrop-blur-sm">
+            <div className="relative w-full h-full rounded-2xl overflow-hidden">
               <Image
                 src="/images/Foto1.jpeg"
                 alt="Ana Gosmin - Nutricionista"

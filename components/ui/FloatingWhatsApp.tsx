@@ -8,12 +8,13 @@ export default function FloatingWhatsApp() {
   const [showTooltip, setShowTooltip] = useState(false);
   const [hasClosed, setHasClosed] = useState(false);
 
+  // Alterado para 500ms: Aparece logo no início, logo após a página carregar!
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!hasClosed) {
         setShowTooltip(true);
       }
-    }, 4000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [hasClosed]);
@@ -27,7 +28,6 @@ export default function FloatingWhatsApp() {
   return (
     <div id="wa-button" className="fixed bottom-6 right-6 z-50 flex flex-col items-end transition-opacity duration-300">
       
-      {/* Balão de Mensagem */}
       <div 
         className={`mb-4 w-64 bg-white rounded-2xl shadow-2xl border border-brand-lightgreen/20 p-4 relative origin-bottom-right transition-all duration-500 ease-out flex gap-3 ${
           showTooltip ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-50 translate-y-4 pointer-events-none'
@@ -62,7 +62,6 @@ export default function FloatingWhatsApp() {
         <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-b border-r border-brand-lightgreen/20 transform rotate-45"></div>
       </div>
 
-      {/* Botão Principal do WhatsApp */}
       <a
         href="https://wa.me/5511999999999" 
         target="_blank"
