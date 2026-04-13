@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -14,6 +14,13 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+// Otimização para navegadores mobile e cor da barra de endereço
+export const viewport: Viewport = {
+  themeColor: "#1e3932", // Cor brand-darkgreen
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Ana Gosmin | Nutricionista Clínica e Comportamental",
   description: "Redefina seu estilo de vida sem restrições. Emagrecimento saudável e autonomia para as suas escolhas.",
@@ -23,11 +30,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ana Gosmin | Nutricionista",
     description: "Emagrecimento saudável e autonomia para as suas escolhas. Descubra como a nutrição pode ser leve e adaptada à sua rotina real.",
-    url: "https://anagosmin.com.br", // Link do site (pode deixar assim por enquanto)
+    url: "https://site-ana-gosmin.vercel.app", // Atualizado para o link real da Vercel para melhor SEO
     siteName: "Ana Gosmin Nutricionista",
     images: [
       {
-        url: "/images/Foto1.jpeg", // A foto que vai aparecer no preview do WhatsApp
+        url: "/images/Foto1.jpeg",
         width: 1200,
         height: 630,
         alt: "Ana Gosmin - Nutricionista",
@@ -53,6 +60,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
+      <head>
+        {/* Preconnect ajuda o navegador a iniciar a conexão com o servidor mais rápido */}
+        <link rel="preconnect" href="https://site-ana-gosmin.vercel.app" />
+        <link rel="dns-prefetch" href="https://site-ana-gosmin.vercel.app" />
+      </head>
       <body className="font-sans antialiased min-h-screen flex flex-col">
         {children}
       </body>

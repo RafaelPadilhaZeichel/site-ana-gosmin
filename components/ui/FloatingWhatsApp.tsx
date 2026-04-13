@@ -45,6 +45,7 @@ export default function FloatingWhatsApp() {
             src="/images/Foto5.jpeg" 
             alt="Ana Gosmin" 
             fill 
+            sizes="(max-width: 768px) 300px, 500px"
             className="object-cover object-top"
           />
         </div>

@@ -36,18 +36,18 @@ export default function HeroSection() {
         {/* Lado da Imagem: Novo Design da Moldura */}
         <FadeIn className="flex-1 relative w-full max-w-md lg:max-w-lg aspect-[4/5]">
           
-          {/* Fundo decorativo desalinhado com o NOVO formato (rounded-t-3xl rounded-b-full) */}
           <div className="absolute inset-0 bg-brand-lightgreen/30 rounded-t-3xl rounded-b-full transform rotate-3 scale-105 transition-transform duration-500 hover:rotate-6 -z-10"></div>
           
-          {/* Container Principal da Imagem - Mantendo o NOVO formato e adicionando p-2 (8px de padding) */}
           <div className="relative w-full h-full rounded-t-3xl rounded-b-full overflow-hidden shadow-2xl border-4 border-white/50 bg-white p-2">
-           {/* Comentário agora está FORA da tag Image, resolvendo o erro! */}
-           <Image
-              src="/images/Foto1.jpeg"
+            <Image
+              src="/images/Foto1.jpeg" 
               alt="Ana Gosmin - Nutricionista"
               fill
-              className="object-contain object-top" 
-              priority
+              priority // Carregamento prioritário nativo do Next.js
+              /* @ts-ignore - fetchPriority é novo mas aceito pelos navegadores modernos */
+              fetchPriority="high" 
+              sizes="(max-width: 768px) 300px, 600px"
+              className="object-cover"
             />
           </div>
         </FadeIn>
