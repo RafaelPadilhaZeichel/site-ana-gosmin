@@ -31,6 +31,7 @@ export default function Footer() {
               <li><Link href="#sobre" className="hover:text-brand-lightgreen transition-colors">Conheça a Nutri</Link></li>
               <li><Link href="#especialidades" className="hover:text-brand-lightgreen transition-colors">Especialidades</Link></li>
               <li><Link href="#metodo" className="hover:text-brand-lightgreen transition-colors">Como Funciona</Link></li>
+              <li><Link href="#faq" className="hover:text-brand-lightgreen transition-colors">Dúvidas</Link></li>
               <li><Link href="#receitas" className="hover:text-brand-lightgreen transition-colors">E-book de Receitas</Link></li>
             </ul>
           </div>
@@ -53,7 +54,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 mt-6">
                 <a 
-                  href="https://instagram.com/SEUPERFIL" 
+                  href="https://www.instagram.com/nutri.anagosmin?igsh=MWJmazVsbzlreXdv"
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-mediumgreen hover:-translate-y-1 transition-all duration-300 group"

@@ -15,3 +15,14 @@ body {
   background-color: var(--color-brand-bg);
   color: var(--color-brand-darkgreen);
 }
+
+/* Cursor de Frutas Customizado */
+* {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size: 24px;'><text y='24' x='4'>🍉</text></svg>") 16 16, auto;
+}
+
+/* Cursor para elementos clicáveis E tudo o que estiver dentro deles (*) */
+a, button, [role="button"], label,
+a *, button *, [role="button"] *, label * {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size: 24px;'><text y='24' x='4'>🍎</text></svg>") 16 16, pointer !important;
+}

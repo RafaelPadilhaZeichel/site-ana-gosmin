@@ -23,7 +23,7 @@ export default function HeroSection() {
           </p>
           
           <a 
-            href="https://wa.me/5511999999999" 
+            href="https://api.whatsapp.com/send?phone=5519999693465&text=Ol%C3%A1!%20Estava%20navegando%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." 
             target="_blank" 
             rel="noopener noreferrer"
             className="group flex items-center gap-3 bg-brand-darkgreen text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-brand-mediumgreen hover:shadow-lg hover:-translate-y-1"
@@ -33,20 +33,22 @@ export default function HeroSection() {
           </a>
         </FadeIn>
 
+        {/* Lado da Imagem: Novo Design da Moldura */}
         <FadeIn className="flex-1 relative w-full max-w-md lg:max-w-lg aspect-[4/5]">
-          <div className="absolute inset-0 bg-brand-lightgreen/30 rounded-[40px] transform rotate-3 scale-105 transition-transform duration-500 hover:rotate-6 -z-10"></div>
           
-          {/* Adicionado pt-10 e p-6 para empurrar a imagem para baixo e diminuir seu tamanho na moldura */}
-          <div className="relative w-full h-full rounded-[40px] overflow-hidden shadow-2xl border-4 border-white/50 bg-white/40 p-6 pt-10 backdrop-blur-sm">
-            <div className="relative w-full h-full rounded-2xl overflow-hidden">
-              <Image
-                src="/images/Foto1.jpeg"
-                alt="Ana Gosmin - Nutricionista"
-                fill
-                className="object-cover object-top" 
-                priority
-              />
-            </div>
+          {/* Fundo decorativo desalinhado com o NOVO formato (rounded-t-3xl rounded-b-full) */}
+          <div className="absolute inset-0 bg-brand-lightgreen/30 rounded-t-3xl rounded-b-full transform rotate-3 scale-105 transition-transform duration-500 hover:rotate-6 -z-10"></div>
+          
+          {/* Container Principal da Imagem - Mantendo o NOVO formato e adicionando p-2 (8px de padding) */}
+          <div className="relative w-full h-full rounded-t-3xl rounded-b-full overflow-hidden shadow-2xl border-4 border-white/50 bg-white p-2">
+           {/* Comentário agora está FORA da tag Image, resolvendo o erro! */}
+           <Image
+              src="/images/Foto1.jpeg"
+              alt="Ana Gosmin - Nutricionista"
+              fill
+              className="object-contain object-top" 
+              priority
+            />
           </div>
         </FadeIn>
 

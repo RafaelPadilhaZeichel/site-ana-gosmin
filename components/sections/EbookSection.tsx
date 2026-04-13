@@ -1,6 +1,9 @@
+"use client";
+
 import Image from 'next/image';
 import { BookOpen } from 'lucide-react';
 import FadeIn from '../ui/FadeIn';
+import { motion } from 'framer-motion';
 
 export default function EbookSection() {
   return (
@@ -44,8 +47,11 @@ export default function EbookSection() {
             </li>
           </ul>
           
+          {/* Botão atualizado com o WhatsApp da Ana e mensagem específica do e-book */}
           <a 
-            href="#" 
+            href="https://api.whatsapp.com/send?phone=5519999693465&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20como%20adquirir%20o%20e-book%20Emagrecer%20com%20Leveza." 
+            target="_blank"
+            rel="noopener noreferrer"
             className="group flex items-center gap-3 bg-brand-wine text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg hover:-translate-y-1"
           >
             <BookOpen className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -53,19 +59,24 @@ export default function EbookSection() {
           </a>
         </FadeIn>
 
-        {/* Lado Direito: Mockup Animado com Delay */}
+        {/* Lado Direito: Mockup Animado com Delay e Levitação Infinita */}
         <FadeIn delay={0.2} className="flex-1 w-full max-w-sm lg:max-w-md relative aspect-[3/4]">
           {/* Efeito de brilho no fundo para destacar a capa */}
           <div className="absolute inset-0 bg-brand-gold/20 rounded-xl filter blur-2xl transform scale-105 -z-10"></div>
           
-          <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl border border-white/20 transition-transform duration-500 hover:scale-105">
+          {/* Substituída a div padrão por motion.div para aplicar a levitação */}
+          <motion.div 
+            className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl border border-white/20"
+            animate={{ y: [0, -15, 0] }}
+            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+          >
             <Image
               src="/images/Ebook.jpeg" 
               alt="Capa do E-book Emagrecer com Leveza"
               fill
               className="object-cover"
             />
-          </div>
+          </motion.div>
         </FadeIn>
 
       </div>

@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   title: "Ana Gosmin | Nutricionista Clínica e Comportamental",
   description: "Redefina seu estilo de vida sem restrições. Emagrecimento saudável e autonomia para as suas escolhas.",
   keywords: ["Nutricionista", "Nutrição Comportamental", "Emagrecimento", "Nutrição Clínica", "Dieta Saudável", "Ana Gosmin"],
+  
+  // Configurações para WhatsApp, Instagram, Facebook, LinkedIn
   openGraph: {
     title: "Ana Gosmin | Nutricionista",
     description: "Emagrecimento saudável e autonomia para as suas escolhas. Descubra como a nutrição pode ser leve e adaptada à sua rotina real.",
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Ana Gosmin Nutricionista",
     images: [
       {
-        url: "/images/Foto1.jpeg", // Esta será a foto que vai aparecer no preview do WhatsApp!
+        url: "/images/Foto1.jpeg", // A foto que vai aparecer no preview do WhatsApp
         width: 1200,
         height: 630,
         alt: "Ana Gosmin - Nutricionista",
@@ -33,6 +35,14 @@ export const metadata: Metadata = {
     ],
     locale: "pt_BR",
     type: "website",
+  },
+
+  // Configurações para o X (antigo Twitter)
+  twitter: {
+    card: "summary_large_image",
+    title: "Ana Gosmin | Nutricionista",
+    description: "Emagrecimento saudável e autonomia para as suas escolhas.",
+    images: ["/images/Foto1.jpeg"],
   },
 };
 
