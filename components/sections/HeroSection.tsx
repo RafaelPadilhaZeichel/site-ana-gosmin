@@ -23,7 +23,7 @@ export default function HeroSection() {
           </p>
           
           <a 
-            href="https://api.whatsapp.com/send?phone=5519999693465&text=Ol%C3%A1!%20Estava%20navegando%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." 
+            href="https://api.whatsapp.com/send?phone=5548988246141&text=Ol%C3%A1!%20Estava%20navegando%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." 
             target="_blank" 
             rel="noopener noreferrer"
             className="group flex items-center gap-3 bg-brand-darkgreen text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-brand-mediumgreen hover:shadow-lg hover:-translate-y-1"

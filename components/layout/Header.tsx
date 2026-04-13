@@ -57,7 +57,7 @@ export default function Header() {
         {/* Botão Agendar (Desktop) */}
         <div className="hidden md:block">
           <a 
-            href="https://api.whatsapp.com/send?phone=5519999693465&text=Ol%C3%A1!%20Estava%20navegando%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." 
+            href="https://api.whatsapp.com/send?phone=5548988246141&text=Ol%C3%A1!%20Estava%20navegando%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-brand-wine text-white px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 hover:bg-opacity-90 hover:shadow-md"
@@ -112,7 +112,7 @@ export default function Header() {
           
           <div className="mt-auto pt-8">
             <a 
-              href="https://api.whatsapp.com/send?phone=5519999693465&text=Ol%C3%A1!%20Estava%20navegando%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." 
+              href="https://api.whatsapp.com/send?phone=5548988246141&text=Ol%C3%A1!%20Estava%20navegando%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." 
               target="_blank" 
               rel="noopener noreferrer"
               className="block w-full bg-brand-wine text-white text-center px-6 py-4 rounded-full font-medium transition-all shadow-md active:scale-95"

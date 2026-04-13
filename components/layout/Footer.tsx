@@ -36,22 +36,33 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Coluna 3: Contato e Local */}
+          {/* Coluna 3: Contato e Local Atualizada */}
           <div>
             <h4 className="text-lg font-heading font-bold mb-6 text-brand-lightgreen">Contato & Local</h4>
             <ul className="space-y-4 text-white/80 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-brand-lightgreen shrink-0" />
-                <span>Edifício Saúde Integrada<br/>Av. Principal, 1000 - Sala 42<br/>São Paulo - SP</span>
+                <div>
+                  <span className="font-bold text-white block mb-1 uppercase tracking-wider text-xs">Atendimento Online</span>
+                  <p>Florianópolis - SC</p>
+                </div>
               </li>
+              
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-brand-lightgreen shrink-0" />
-                <span>(19) 99969-3465</span>
+                <span>(48) 98824-6141</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-brand-lightgreen shrink-0" />
-                <span>contato@anagosmin.com.br</span>
+              
+              <li>
+                <a 
+                  href="mailto:anacarolina.gosmin@gmail.com?subject=Contato pelo Site"
+                  className="flex items-center gap-3 hover:text-brand-lightgreen transition-colors group"
+                >
+                  <Mail className="w-5 h-5 text-brand-lightgreen shrink-0 group-hover:scale-110 transition-transform" />
+                  <span>anacarolina.gosmin@gmail.com</span>
+                </a>
               </li>
+
               <li className="flex items-center gap-3 mt-6">
                 <a 
                   href="https://www.instagram.com/nutri.anagosmin?igsh=MWJmazVsbzlreXdv"
@@ -60,7 +71,6 @@ export default function Footer() {
                   className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-mediumgreen hover:-translate-y-1 transition-all duration-300 group"
                   aria-label="Siga-nos no Instagram"
                 >
-                  {/* Ícone SVG do Instagram Completo */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

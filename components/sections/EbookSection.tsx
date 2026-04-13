@@ -49,7 +49,7 @@ export default function EbookSection() {
           
           {/* Botão atualizado com o WhatsApp da Ana e mensagem específica do e-book */}
           <a 
-            href="https://api.whatsapp.com/send?phone=5519999693465&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20como%20adquirir%20o%20e-book%20Emagrecer%20com%20Leveza." 
+            href="https://api.whatsapp.com/send?phone=5548988246141&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20como%20adquirir%20o%20e-book%20Emagrecer%20com%20Leveza." 
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-3 bg-brand-wine text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:bg-opacity-90 hover:shadow-lg hover:-translate-y-1"
@@ -64,9 +64,9 @@ export default function EbookSection() {
           {/* Efeito de brilho no fundo para destacar a capa */}
           <div className="absolute inset-0 bg-brand-gold/20 rounded-xl filter blur-2xl transform scale-105 -z-10"></div>
           
-          {/* Substituída a div padrão por motion.div para aplicar a levitação */}
+          {/* Adicionado bg-white no container para garantir uma moldura perfeita */}
           <motion.div 
-            className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl border border-white/20"
+            className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-white"
             animate={{ y: [0, -15, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
           >
@@ -74,7 +74,7 @@ export default function EbookSection() {
               src="/images/Ebook.jpeg" 
               alt="Capa do E-book Emagrecer com Leveza"
               fill
-              className="object-cover"
+              className="object-contain p-2" 
             />
           </motion.div>
         </FadeIn>

@@ -62,7 +62,7 @@ export default function FloatingWhatsApp() {
       </div>
 
       <a
-        href="https://api.whatsapp.com/send?phone=5519999693465&text=Ol%C3%A1!%20Estava%20navegando%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." 
+        href="https://api.whatsapp.com/send?phone=5548988246141&text=Ol%C3%A1!%20Estava%20navegando%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta." 
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Fale conosco no WhatsApp"
