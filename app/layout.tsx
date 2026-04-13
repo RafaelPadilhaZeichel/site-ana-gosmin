@@ -14,9 +14,9 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-// Otimização para navegadores mobile e cor da barra de endereço
+// Configuração de Viewport separada para otimização de renderização
 export const viewport: Viewport = {
-  themeColor: "#1e3932", // Cor brand-darkgreen
+  themeColor: "#1e3932",
   width: "device-width",
   initialScale: 1,
 };
@@ -26,11 +26,10 @@ export const metadata: Metadata = {
   description: "Redefina seu estilo de vida sem restrições. Emagrecimento saudável e autonomia para as suas escolhas.",
   keywords: ["Nutricionista", "Nutrição Comportamental", "Emagrecimento", "Nutrição Clínica", "Dieta Saudável", "Ana Gosmin"],
   
-  // Configurações para WhatsApp, Instagram, Facebook, LinkedIn
   openGraph: {
     title: "Ana Gosmin | Nutricionista",
-    description: "Emagrecimento saudável e autonomia para as suas escolhas. Descubra como a nutrição pode ser leve e adaptada à sua rotina real.",
-    url: "https://site-ana-gosmin.vercel.app", // Atualizado para o link real da Vercel para melhor SEO
+    description: "Emagrecimento saudável e autonomia para as suas escolhas.",
+    url: "https://site-ana-gosmin.vercel.app",
     siteName: "Ana Gosmin Nutricionista",
     images: [
       {
@@ -44,7 +43,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 
-  // Configurações para o X (antigo Twitter)
   twitter: {
     card: "summary_large_image",
     title: "Ana Gosmin | Nutricionista",
@@ -61,11 +59,11 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <head>
-        {/* Preconnect ajuda o navegador a iniciar a conexão com o servidor mais rápido */}
+        {/* Acelera a conexão com o servidor da Vercel */}
         <link rel="preconnect" href="https://site-ana-gosmin.vercel.app" />
         <link rel="dns-prefetch" href="https://site-ana-gosmin.vercel.app" />
       </head>
-      <body className="font-sans antialiased min-h-screen flex flex-col">
+      <body className="font-sans antialiased min-h-screen flex flex-col bg-brand-bg">
         {children}
       </body>
     </html>

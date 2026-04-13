@@ -10,7 +10,8 @@ export default function HeroSection() {
       <div className="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 relative z-10">
         
         <FadeIn delay={0.2} className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left mt-10 lg:mt-0">
-          <span className="text-brand-mediumgreen font-semibold tracking-wider uppercase text-sm mb-4">
+          {/* Trocado brand-mediumgreen por brand-darkgreen para acessibilidade (Contraste) */}
+          <span className="text-brand-darkgreen font-bold tracking-wider uppercase text-sm mb-4 opacity-90">
             Nutrição Clínica e Comportamental
           </span>
           
@@ -33,9 +34,7 @@ export default function HeroSection() {
           </a>
         </FadeIn>
 
-        {/* Lado da Imagem: Novo Design da Moldura */}
         <FadeIn className="flex-1 relative w-full max-w-md lg:max-w-lg aspect-[4/5]">
-          
           <div className="absolute inset-0 bg-brand-lightgreen/30 rounded-t-3xl rounded-b-full transform rotate-3 scale-105 transition-transform duration-500 hover:rotate-6 -z-10"></div>
           
           <div className="relative w-full h-full rounded-t-3xl rounded-b-full overflow-hidden shadow-2xl border-4 border-white/50 bg-white p-2">
@@ -43,10 +42,10 @@ export default function HeroSection() {
               src="/images/Foto1.jpeg" 
               alt="Ana Gosmin - Nutricionista"
               fill
-              priority // Carregamento prioritário nativo do Next.js
-              /* @ts-ignore - fetchPriority é novo mas aceito pelos navegadores modernos */
+              priority // Prioridade nativa do Next.js
+              /* @ts-ignore - Atributo crucial para baixar o LCP */
               fetchPriority="high" 
-              sizes="(max-width: 768px) 300px, 600px"
+              sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 600px"
               className="object-cover"
             />
           </div>

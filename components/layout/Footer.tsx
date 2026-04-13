@@ -19,16 +19,17 @@ export default function Footer() {
                 className="object-contain mix-blend-multiply"
               />
             </div>
-            <p className="text-white/70 text-sm leading-relaxed max-w-xs">
+            {/* Opacidade aumentada de /70 para /85 para melhor contraste */}
+            <p className="text-white/85 text-sm leading-relaxed max-w-xs">
               Ajudando você a redefinir seu estilo de vida sem restrições. Nutrição clínica e comportamental focada em resultados reais e duradouros.
             </p>
           </div>
 
           {/* Coluna 2: Links Rápidos */}
           <div>
-            {/* Título alterado para h3 para hierarquia correta */}
             <h3 className="text-lg font-heading font-bold mb-6 text-brand-lightgreen">Menu Rápido</h3>
-            <ul className="space-y-3 text-white/90 text-sm">
+            {/* Opacidade aumentada de /90 para /95 (quase branco puro) */}
+            <ul className="space-y-3 text-white/95 text-sm">
               <li><Link href="#sobre" className="hover:text-brand-lightgreen transition-colors">Conheça a Nutri</Link></li>
               <li><Link href="#especialidades" className="hover:text-brand-lightgreen transition-colors">Especialidades</Link></li>
               <li><Link href="#metodo" className="hover:text-brand-lightgreen transition-colors">Como Funciona</Link></li>
@@ -37,11 +38,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Coluna 3: Contato e Local Atualizada */}
+          {/* Coluna 3: Contato e Local */}
           <div>
-            {/* Título alterado para h3 para hierarquia correta */}
             <h3 className="text-lg font-heading font-bold mb-6 text-brand-lightgreen">Contato & Local</h3>
-            <ul className="space-y-4 text-white/90 text-sm">
+            <ul className="space-y-4 text-white/95 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-brand-lightgreen shrink-0" />
                 <div>
@@ -97,7 +97,8 @@ export default function Footer() {
 
         {/* Linha de Copyright */}
         <div className="pt-8 border-t border-white/10 text-center flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/70 text-sm text-center md:text-left">
+          {/* Opacidade aumentada de /50 para /80 para passar no teste de contraste */}
+          <p className="text-white/80 text-sm text-center md:text-left">
             © {new Date().getFullYear()} Ana Gosmin. Todos os direitos reservados.
           </p>
         </div>
