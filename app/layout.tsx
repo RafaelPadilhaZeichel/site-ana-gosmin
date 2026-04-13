@@ -26,6 +26,13 @@ export const metadata: Metadata = {
   description: "Redefina seu estilo de vida sem restrições. Emagrecimento saudável e autonomia para as suas escolhas.",
   keywords: ["Nutricionista", "Nutrição Comportamental", "Emagrecimento", "Nutrição Clínica", "Dieta Saudável", "Ana Gosmin"],
   
+  // CONFIGURAÇÃO DO ÍCONE DA ABA (FAVICON)
+  icons: {
+    icon: "/logo/Marca.jpeg",
+    shortcut: "/logo/Marca.jpeg",
+    apple: "/logo/Marca.jpeg",
+  },
+
   openGraph: {
     title: "Ana Gosmin | Nutricionista",
     description: "Emagrecimento saudável e autonomia para as suas escolhas.",
