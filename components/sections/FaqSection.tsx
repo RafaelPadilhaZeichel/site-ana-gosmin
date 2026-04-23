@@ -11,11 +11,11 @@ const faqs = [
   },
   {
     question: 'Como funciona a consulta online?',
-    answer: 'A consulta online tem a mesma duração e qualidade da presencial. Conversamos por videochamada, analisamos seus exames e construímos seu plano alimentar juntos, na hora. O envio dos materiais é feito no mesmo dia.'
+    answer: 'A consulta online tem a mesma duração e qualidade da presencial. Conversamos por videochamada, analisamos seus exames e construímos seu plano alimentar juntos, na hora.'
   },
   {
     question: 'A consulta dá direito a retorno?',
-    answer: 'Acredito em acompanhamento contínuo. Dependendo do plano escolhido, você terá retornos programados, mas meu diferencial é o suporte via WhatsApp. Durante todo o período entre consultas, estarei disponível para ajustes e dúvidas.'
+    answer: 'Acredito em acompanhamento contínuo. Dependendo da necessidade de cada caso, você pode contar com consulta de retorno e suporte entre as consultas para ajustes e dúvidas.'
   },
   {
     question: 'Eu preciso cortar tudo que gosto para emagrecer?',
@@ -60,15 +60,15 @@ export default function FaqSection() {
                   {faq.question}
                 </span>
                 <ChevronDown 
-                  className={`w-5 h-5 text-brand-mediumgreen transition-transform duration-300 ${
+                  className={`w-5 h-5 text-brand-mediumgreen transition-transform duration-300 shrink-0 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`} 
                 />
               </button>
               
               <div 
-                className={`transition-all duration-300 ease-in-out ${
-                  openIndex === index ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
+                className={`transition-all duration-500 ease-in-out ${
+                  openIndex === index ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
                 }`}
               >
                 <p className="px-6 pb-6 text-brand-darkgreen/70 leading-relaxed">

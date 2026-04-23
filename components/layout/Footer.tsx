@@ -57,11 +57,11 @@ export default function Footer() {
               
               <li>
                 <a 
-                  href="mailto:anacarolina.gosmin@gmail.com?subject=Contato pelo Site"
+                  href="mailto:nutri.anagosmin@gmail.com?subject=Contato pelo Site"
                   className="flex items-center gap-3 hover:text-brand-lightgreen transition-colors group"
                 >
                   <Mail className="w-5 h-5 text-brand-lightgreen shrink-0 group-hover:scale-110 transition-transform" />
-                  <span>anacarolina.gosmin@gmail.com</span>
+                  <span>nutri.anagosmin@gmail.com</span>
                 </a>
               </li>
 

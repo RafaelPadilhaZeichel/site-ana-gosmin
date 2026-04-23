@@ -5,7 +5,7 @@ const steps = [
   {
     icon: CalendarDays,
     title: '1. Agendamento e Acolhimento',
-    description: 'Tudo começa no nosso primeiro contato. Vamos encontrar o melhor formato (online ou presencial) e você receberá um formulário pré-consulta para eu já ir conhecendo um pouco da sua rotina.',
+    description: 'Tudo começa no nosso primeiro contato. Vamos definir o melhor formato (online ou presencial) e ter uma breve conversa para eu conhecer um pouco da sua rotina e entender o motivo da consulta.',
   },
   {
     icon: ClipboardList,
