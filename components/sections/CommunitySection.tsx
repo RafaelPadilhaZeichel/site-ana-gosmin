@@ -5,7 +5,7 @@ import FadeIn from '../ui/FadeIn';
 
 export default function CommunitySection() {
   return (
-    <section className="py-20 bg-brand-bg w-full relative overflow-hidden">
+    <section id="community" className="py-20 bg-brand-bg w-full relative overflow-hidden">
       <div className="absolute top-0 left-0 w-64 h-64 bg-brand-lightgreen/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-brand-lightgreen/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
 

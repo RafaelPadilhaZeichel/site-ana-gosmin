@@ -3,12 +3,20 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, User, Sparkles, Target, HelpCircle, BookOpen, Users } from 'lucide-react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const closeMenu = () => setIsMobileMenuOpen(false);
+
+  // Lógica da Barra de Progresso
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   // Trava a rolagem e oculta o WhatsApp quando o menu abre
   useEffect(() => {
@@ -32,7 +40,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-40 bg-brand-bg/90 backdrop-blur-md border-b border-brand-lightgreen/30 shadow-sm">
-      <div className="container mx-auto px-6 md:px-12 lg:px-24 h-20 flex items-center justify-between">
+      <div className="container mx-auto px-6 md:px-12 lg:px-24 h-20 flex items-center justify-between relative">
         
         {/* Logo */}
         <Link href="/" className="relative h-14 w-40 md:w-48 flex items-center" onClick={closeMenu}>
@@ -79,6 +87,12 @@ export default function Header() {
         )}
       </div>
 
+      {/* Barra de Progresso de Leitura no fundo do Header */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 h-1 bg-brand-mediumgreen origin-left"
+        style={{ scaleX }}
+      />
+
       {/* Overlay Escuro para o Mobile */}
       {isMobileMenuOpen && (
         <div 
@@ -87,7 +101,7 @@ export default function Header() {
         ></div>
       )}
 
-      {/* Menu Dropdown Deslizante (Mobile) - Usando 100dvh para não cortar */}
+      {/* Menu Dropdown Deslizante (Mobile) */}
       <div 
         className={`md:hidden fixed top-0 right-0 h-[100dvh] w-[85%] max-w-sm bg-brand-bg shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -101,15 +115,26 @@ export default function Header() {
           <X className="w-8 h-8" />
         </button>
 
-        {/* Conteúdo do Menu com espaçamento extra no final (pb-12) */}
         <div className="flex flex-col h-full pt-24 px-8 pb-12 overflow-y-auto">
           <nav className="flex flex-col gap-2 text-brand-darkgreen font-medium text-xl mt-4">
-            <Link href="#sobre" onClick={closeMenu} className="hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">Sobre</Link>
-            <Link href="#especialidades" onClick={closeMenu} className="hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">Especialidades</Link>
-            <Link href="#metodo" onClick={closeMenu} className="hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">Método</Link>
-            <Link href="#faq" onClick={closeMenu} className="hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">Dúvidas</Link>
-            <Link href="#receitas" onClick={closeMenu} className="hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">Receitas</Link>
-            <Link href="#community" onClick={closeMenu} className="hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">Comunidade</Link>
+            <Link href="#sobre" onClick={closeMenu} className="flex items-center gap-4 hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">
+              <User className="w-5 h-5 text-brand-mediumgreen" /> Sobre
+            </Link>
+            <Link href="#especialidades" onClick={closeMenu} className="flex items-center gap-4 hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">
+              <Sparkles className="w-5 h-5 text-brand-mediumgreen" /> Especialidades
+            </Link>
+            <Link href="#metodo" onClick={closeMenu} className="flex items-center gap-4 hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">
+              <Target className="w-5 h-5 text-brand-mediumgreen" /> Método
+            </Link>
+            <Link href="#faq" onClick={closeMenu} className="flex items-center gap-4 hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">
+              <HelpCircle className="w-5 h-5 text-brand-mediumgreen" /> Dúvidas
+            </Link>
+            <Link href="#receitas" onClick={closeMenu} className="flex items-center gap-4 hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">
+              <BookOpen className="w-5 h-5 text-brand-mediumgreen" /> Receitas
+            </Link>
+            <Link href="#community" onClick={closeMenu} className="flex items-center gap-4 hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">
+              <Users className="w-5 h-5 text-brand-mediumgreen" /> Comunidade
+            </Link>
           </nav>
           
           <div className="mt-auto pt-8">
@@ -122,6 +147,34 @@ export default function Header() {
             >
               Agendar Consulta
             </a>
+
+            {/* ADICIONADO: Ícone do Instagram puro em SVG */}
+            <div className="flex justify-center mt-6">
+              <a 
+                href="https://www.instagram.com/nutri.anagosmin?igsh=MWJmazVsbzlreXdv" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-3 bg-brand-lightgreen/20 rounded-full text-brand-darkgreen hover:bg-brand-mediumgreen hover:text-white transition-colors"
+                aria-label="Instagram"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-6 h-6"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
