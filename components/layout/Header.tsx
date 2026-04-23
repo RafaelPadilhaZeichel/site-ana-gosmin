@@ -52,6 +52,7 @@ export default function Header() {
           <Link href="#metodo" className="hover:text-brand-mediumgreen transition-colors">Método</Link>
           <Link href="#faq" className="hover:text-brand-mediumgreen transition-colors">Dúvidas</Link>
           <Link href="#receitas" className="hover:text-brand-mediumgreen transition-colors">Receitas</Link>
+          <Link href="#community" className="hover:text-brand-mediumgreen transition-colors">Comunidade</Link>
         </nav>
 
         {/* Botão Agendar (Desktop) */}

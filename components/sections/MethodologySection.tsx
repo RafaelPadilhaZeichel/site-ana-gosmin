@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from 'react';
 import { CalendarDays, ClipboardList, Utensils, MessageCircleHeart } from 'lucide-react';
 import FadeIn from '../ui/FadeIn';
 
@@ -25,6 +28,8 @@ const steps = [
 ];
 
 export default function MethodologySection() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <section id="metodo" className="py-24 bg-white w-full">
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
@@ -42,36 +47,53 @@ export default function MethodologySection() {
           </p>
         </FadeIn>
 
-        {/* Timeline Animada */}
-        <div className="max-w-3xl mx-auto">
+        {/* Timeline Animada com Efeito Spotlight */}
+        <div className="max-w-3xl mx-auto" onMouseLeave={() => setHoveredIndex(null)}>
           {steps.map((step, index) => {
             const Icon = step.icon;
             const isLast = index === steps.length - 1;
 
             return (
-              <FadeIn key={index} delay={index * 0.2} className="flex gap-6 md:gap-8 relative">
-                
-                {/* Coluna do Ícone e Linha */}
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-lightgreen/20 rounded-full flex items-center justify-center z-10 border-4 border-white shadow-sm">
-                    <Icon className="w-6 h-6 md:w-8 md:h-8 text-brand-mediumgreen" />
+              <FadeIn key={index} delay={index * 0.2}>
+                <div 
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  className={`flex gap-6 md:gap-8 relative transition-all duration-500 ease-out py-2 ${
+                    hoveredIndex !== null && hoveredIndex !== index 
+                      ? 'opacity-30 blur-[1px]' 
+                      : 'opacity-100'
+                  } ${
+                    hoveredIndex === index ? 'translate-x-3' : ''
+                  }`}
+                >
+                  
+                  {/* Coluna do Ícone e Linha */}
+                  <div className="flex flex-col items-center">
+                    <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center z-10 border-4 border-white shadow-sm transition-colors duration-500 ${
+                      hoveredIndex === index ? 'bg-brand-mediumgreen' : 'bg-brand-lightgreen/20'
+                    }`}>
+                      <Icon className={`w-6 h-6 md:w-8 md:h-8 transition-colors duration-500 ${
+                        hoveredIndex === index ? 'text-white' : 'text-brand-mediumgreen'
+                      }`} />
+                    </div>
+                    {/* Linha conectora */}
+                    {!isLast && (
+                      <div className={`w-0.5 h-full mt-2 absolute top-12 md:top-16 bottom-[-20px] transition-colors duration-500 ${
+                        hoveredIndex === index ? 'bg-brand-mediumgreen/50' : 'bg-brand-lightgreen/30'
+                      }`}></div>
+                    )}
                   </div>
-                  {/* Linha conectora (não renderiza no último item) */}
-                  {!isLast && (
-                    <div className="w-0.5 h-full bg-brand-lightgreen/30 mt-2 absolute top-12 md:top-16 bottom-[-20px]"></div>
-                  )}
-                </div>
 
-                {/* Coluna do Conteúdo */}
-                <div className="pb-12 md:pb-16 pt-2">
-                  <h3 className="text-xl md:text-2xl font-heading font-bold text-brand-darkgreen mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-brand-darkgreen/70 text-lg leading-relaxed">
-                    {step.description}
-                  </p>
+                  {/* Coluna do Conteúdo */}
+                  <div className="pb-12 md:pb-16 pt-2">
+                    <h3 className="text-xl md:text-2xl font-heading font-bold text-brand-darkgreen mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-brand-darkgreen/70 text-lg leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                  
                 </div>
-                
               </FadeIn>
             );
           })}
