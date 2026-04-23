@@ -6,14 +6,12 @@ import FadeIn from '../ui/FadeIn';
 export default function CommunitySection() {
   return (
     <section className="py-20 bg-brand-bg w-full relative overflow-hidden">
-      {/* Elementos decorativos de fundo */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-brand-lightgreen/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-brand-lightgreen/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
 
       <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
         <FadeIn className="bg-brand-darkgreen rounded-3xl p-8 md:p-12 lg:p-16 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-10 overflow-hidden relative">
           
-          {/* Brilho interno do card */}
           <div className="absolute top-[-50px] right-[-50px] w-40 h-40 bg-brand-lightgreen/30 rounded-full blur-2xl"></div>
 
           <div className="flex-1 text-center lg:text-left z-10">
@@ -25,7 +23,7 @@ export default function CommunitySection() {
             </div>
             
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6 leading-tight">
-              Faça parte do nosso Grupo VIP no WhatsApp
+              Faça parte do nosso Grupo no WhatsApp
             </h2>
             
             <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto lg:mx-0">
@@ -48,19 +46,20 @@ export default function CommunitySection() {
             </ul>
           </div>
 
-          <div className="z-10 shrink-0">
+          <div className="z-10 shrink-0 relative">
+            <div className="absolute inset-0 bg-white/30 rounded-full animate-ping opacity-75"></div>
+            
             <a 
               href="https://chat.whatsapp.com/JzzeAkRD4PQG7gqvG8txv2"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-3 bg-white text-brand-darkgreen px-8 py-5 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
+              className="group relative inline-flex items-center gap-3 bg-white text-brand-darkgreen px-8 py-5 rounded-full font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] z-10"
             >
-              {/* Ícone customizado do WhatsApp */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
-                fill="#25D366" // Cor oficial do Whats
+                fill="#25D366"
                 viewBox="0 0 16 16"
                 className="group-hover:rotate-12 transition-transform"
               >

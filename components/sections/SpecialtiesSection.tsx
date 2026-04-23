@@ -29,7 +29,6 @@ export default function SpecialtiesSection() {
     <section id="especialidades" className="py-24 bg-brand-bg w-full">
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
         
-        {/* Cabeçalho Animado */}
         <FadeIn className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-brand-mediumgreen font-semibold tracking-wider uppercase text-sm mb-3 block">
             Áreas de Atuação
@@ -42,17 +41,16 @@ export default function SpecialtiesSection() {
           </p>
         </FadeIn>
 
-        {/* Grid Animado em Cascata */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {specialties.map((item, index) => {
             const Icon = item.icon;
             return (
               <FadeIn 
                 key={index}
-                delay={index * 0.15} // Efeito cascata
-                className="bg-white p-8 rounded-2xl shadow-soft border border-brand-lightgreen/20 hover:border-brand-mediumgreen/50 transition-all duration-300 hover:-translate-y-2 group"
+                delay={index * 0.15}
+                className="bg-white p-8 rounded-2xl shadow-soft border border-brand-lightgreen/20 hover:border-brand-mediumgreen/50 transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group cursor-pointer"
               >
-                <div className="w-14 h-14 bg-brand-lightgreen/30 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-mediumgreen/20 transition-colors">
+                <div className="w-14 h-14 bg-brand-lightgreen/30 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-mediumgreen/20 transition-all duration-300 group-hover:-translate-y-1">
                   <Icon className="w-7 h-7 text-brand-darkgreen" />
                 </div>
                 <h3 className="text-xl font-heading font-bold text-brand-darkgreen mb-3">

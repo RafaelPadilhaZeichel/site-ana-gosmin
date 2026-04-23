@@ -108,6 +108,7 @@ export default function Header() {
             <Link href="#metodo" onClick={closeMenu} className="hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">Método</Link>
             <Link href="#faq" onClick={closeMenu} className="hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">Dúvidas</Link>
             <Link href="#receitas" onClick={closeMenu} className="hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">Receitas</Link>
+            <Link href="#community" onClick={closeMenu} className="hover:text-brand-mediumgreen border-b border-brand-lightgreen/20 py-4">Comunidade</Link>
           </nav>
           
           <div className="mt-auto pt-8">

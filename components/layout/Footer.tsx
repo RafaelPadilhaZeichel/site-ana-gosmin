@@ -35,6 +35,7 @@ export default function Footer() {
               <li><Link href="#metodo" className="hover:text-brand-lightgreen transition-colors">Como Funciona</Link></li>
               <li><Link href="#faq" className="hover:text-brand-lightgreen transition-colors">Dúvidas</Link></li>
               <li><Link href="#receitas" className="hover:text-brand-lightgreen transition-colors">E-book de Receitas</Link></li>
+              <li><Link href="#community" className="hover:text-brand-lightgreen transition-colors">Comunidade</Link></li>
             </ul>
           </div>
 
