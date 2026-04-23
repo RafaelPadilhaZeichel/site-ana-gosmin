@@ -6,8 +6,8 @@ import SpecialtiesSection from "../components/sections/SpecialtiesSection";
 import MethodologySection from "../components/sections/MethodologySection";
 import FaqSection from "../components/sections/FaqSection";
 import EbookSection from "../components/sections/EbookSection";
-import FloatingWhatsApp from "../components/ui/FloatingWhatsApp";
 import CommunitySection from "../components/sections/CommunitySection";
+import FloatingWhatsApp from "../components/ui/FloatingWhatsApp";
 
 export default function Home() {
   return (
@@ -18,8 +18,9 @@ export default function Home() {
       <AboutSection />
       <SpecialtiesSection />
       <MethodologySection />
-      <FaqSection /> {/* Adicione aqui */}
+      <FaqSection /> 
       <EbookSection />
+      <CommunitySection />
       
       <Footer />
       <FloatingWhatsApp />
