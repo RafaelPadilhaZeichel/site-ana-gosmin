@@ -18,15 +18,17 @@ export default function Home() {
       <ParallaxBackground />
       <FallingLeaves />
 
-      <HeroSection />
-      <AboutSection />
-      <SpecialtiesSection />
-      <MethodologySection />
-      <FaqSection /> 
-      <EbookSection />
-      <CommunitySection />
+      <div className="relative z-10 flex flex-col w-full bg-transparent">
+        <HeroSection />
+        <AboutSection />
+        <SpecialtiesSection />
+        <MethodologySection />
+        <FaqSection /> 
+        <EbookSection />
+        <CommunitySection />
+        <Footer />
+      </div>
       
-      <Footer />
       <FloatingWhatsApp />
     </main>
   );

@@ -25,7 +25,7 @@ export default function ParallaxBackground() {
   return (
     // z-10 coloca as bolhas como uma camada de luz que passa suavemente por cima do fundo,
     // mas pointer-events-none garante que elas não atrapalhem o clique nos botões!
-    <div className="fixed inset-0 z-10 pointer-events-none overflow-hidden">
+    <div className="fixed inset-0 z-[-2] pointer-events-none overflow-hidden">
       
       {/* Bolha Verde Esmeralda (Canto Superior Esquerdo) */}
       <motion.div
