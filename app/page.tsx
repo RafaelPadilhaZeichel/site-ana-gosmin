@@ -9,12 +9,14 @@ import EbookSection from "../components/sections/EbookSection";
 import CommunitySection from "../components/sections/CommunitySection";
 import FloatingWhatsApp from "../components/ui/FloatingWhatsApp";
 import ParallaxBackground from "../components/ui/ParallaxBackground";
+import FallingLeaves from "../components/ui/FallingLeaves";
 
 export default function Home() {
   return (
     <main className="flex flex-col w-full relative">
       <Header />
       <ParallaxBackground />
+      <FallingLeaves />
 
       <HeroSection />
       <AboutSection />
