@@ -11,8 +11,6 @@ export default function FallingLeaves() {
   const { scrollY } = useScroll();
   const smoothScroll = useSpring(scrollY, { damping: 20, stiffness: 80, mass: 0.5 });
 
-  // Aumentamos o valor de 3000 para 8000 para cobrir toda a página
-  // E aumentamos a distância de queda para elas atravessarem o site
   const y1 = useTransform(smoothScroll, [0, 8000], [0, 2000]);
   const rotate1 = useTransform(smoothScroll, [0, 8000], [0, 720]);
 
@@ -28,7 +26,6 @@ export default function FallingLeaves() {
   if (!isMounted) return null;
 
   return (
-    // MUDANÇA: z-[-1] para ficar ATRÁS de tudo
     <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden">
       <motion.div style={{ y: y1, rotate: rotate1 }} className="absolute top-[15%] left-[10%] text-brand-mediumgreen/20">
         <Leaf className="w-8 h-8" />

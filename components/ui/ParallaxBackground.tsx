@@ -4,18 +4,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function ParallaxBackground() {
-  // Estado para garantir que a animação só rode no cliente (evita erros no Next.js)
   const [isMounted, setIsMounted] = useState(false);
   useEffect(() => setIsMounted(true), []);
 
-  // Captura a posição do scroll da página
   const { scrollY } = useScroll();
 
-  // MÁGICA DO PARALLAX:
-  // [0, 3000] é a quantidade de pixels rolados para baixo.
-  // [0, -500] é quantos pixels a bolha vai se mover.
-  // Valores negativos fazem ela subir rápido. Valores positivos fazem ela "cair" devagar.
-  const y1 = useTransform(scrollY, [0, 3000], [0, -500]); // Sobe muito rápido
+  const y1 = useTransform(scrollY, [0, 3000], [0, -500]); 
   const y2 = useTransform(scrollY, [0, 3000], [0, 300]);  // Desce devagar
   const y3 = useTransform(scrollY, [0, 3000], [0, -250]); // Sobe devagar
   const y4 = useTransform(scrollY, [0, 3000], [0, 600]);  // Desce rápido
@@ -23,8 +17,6 @@ export default function ParallaxBackground() {
   if (!isMounted) return null;
 
   return (
-    // z-10 coloca as bolhas como uma camada de luz que passa suavemente por cima do fundo,
-    // mas pointer-events-none garante que elas não atrapalhem o clique nos botões!
     <div className="fixed inset-0 z-[-2] pointer-events-none overflow-hidden">
       
       {/* Bolha Verde Esmeralda (Canto Superior Esquerdo) */}

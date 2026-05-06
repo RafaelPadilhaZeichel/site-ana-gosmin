@@ -21,9 +21,7 @@ export default function EbookSection() {
           </h2>
           
           <p className="text-brand-darkgreen/80 text-lg leading-relaxed mb-8">
-            Um guia completo e prático para quem deseja transformar a alimentação sem abrir mão do sabor. 
-            Descubra receitas fáceis, estratégias de nutrição comportamental e o passo a passo para construir 
-            uma rotina alimentar que você realmente consiga manter.
+            Um guia completo e prático para quem deseja transformar a alimentação sem abrir mão do sabor. Descubra estratégias nutricionais, receitas fáceis, e o passo a passo para construir uma rotina alimentar que você realmente consiga manter.
           </p>
           
           <ul className="space-y-4 mb-10 text-brand-darkgreen/80 text-left w-full max-w-md">

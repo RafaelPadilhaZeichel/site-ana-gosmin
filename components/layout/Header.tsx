@@ -11,7 +11,7 @@ const menuItems = [
   { name: 'Especialidades', href: '#especialidades', icon: Sparkles },
   { name: 'Método', href: '#metodo', icon: Target },
   { name: 'Dúvidas', href: '#faq', icon: HelpCircle },
-  { name: 'Receitas', href: '#receitas', icon: BookOpen },
+  { name: 'E-book', href: '#receitas', icon: BookOpen },
   { name: 'Comunidade', href: '#community', icon: Users },
 ];
 

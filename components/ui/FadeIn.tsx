@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 interface FadeInProps {
   children: React.ReactNode;
   delay?: number;
-  className?: string; // Adicionamos a propriedade className aqui
+  className?: string;
 }
 
 export default function FadeIn({ children, delay = 0, className = "" }: FadeInProps) {
